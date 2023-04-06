@@ -40,9 +40,7 @@ class _ClientsPageState extends State<ClientsPage> {
                   iconColor: Colors.indigo,
                 ),
                 onDismissed: (direction) {
-                  setState(() {
-                    list.clients.removeAt(index);
-                  });
+                  list.remove(index);
                 },
               );
             },
@@ -65,7 +63,6 @@ class _ClientsPageState extends State<ClientsPage> {
     TextEditingController emailInput = TextEditingController();
     Types listTypes = Provider.of<Types>(context, listen: false);
     ClientType dropdownValue = listTypes.types[0];
-
 
     showDialog(
         context: context,

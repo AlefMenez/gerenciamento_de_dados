@@ -1,4 +1,3 @@
-
 import 'package:client_control/models/client_type.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +8,11 @@ class Types extends ChangeNotifier {
 
   void add(ClientType type) {
     types.add(type);
+    notifyListeners();
+  }
+
+  void remove(int index) {
+    types.removeAt(index);
     notifyListeners();
   }
 }
